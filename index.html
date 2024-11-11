@@ -130,10 +130,10 @@
 		var markerRoot = new THREE.Group
 		scene.add(markerRoot)
 		var artoolkitMarker = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
-			//type: 'barcode',
-			//barcodeValue: 'https://magicstickr.github.io/video-base/index.html',
-			type : 'pattern',
-			patternUrl : 'marker/marker_yann.patt'
+			type: 'barcode',
+			barcodeValue: 'https://magicstickr.github.io/video-base/index.html',
+			//type : 'pattern',
+			//patternUrl : 'marker/marker_yann.patt'
 		})
 
 		// build a smoothedControls
@@ -159,11 +159,9 @@
 
 		var all = new THREE.Group();
 
-    
-
 		// Load 3D object
 		var loader = new THREE.GLTFLoader();
-		loader.load('content/check.mp4', function ( gltf ) {
+		loader.load('content/scene.glb', function ( gltf ) {
 			//add it to the scene
 			all.add( gltf.scene );
 			//Resize/rescale the 3D Object

@@ -159,6 +159,26 @@
 
 		var all = new THREE.Group();
 
+    var videoElement = document.createElement('video');
+    videoElement.loop = true; // Set to loop playback
+    videoElement.muted = true; // Set to muted by default (optional)
+    videoElement.src = 'content/check.mp4'; // Replace with your video source
+    videoElement.play(); // Start playing the video
+
+    var videoTexture = new THREE.VideoTexture(videoElement);
+    videoTexture.minFilter = THREE.LinearFilter;
+
+    var videoMaterial = new THREE.MeshBasicMaterial({ map: videoTexture });
+
+    var videoPlane = new THREE.PlaneGeometry(desiredWidth, desiredHeight); // Set desired dimensions
+    var videoMesh = new THREE.Mesh(videoPlane, videoMaterial);
+
+    // Position and rotate the video mesh as needed
+    videoMesh.position.set(x, y, z); // Set position
+    videoMesh.rotation.x = Math.PI / 2; // Rotate 90 degrees on X-axis (optional)
+
+all.add(videoMesh);
+
 		// Load 3D object
 		var loader = new THREE.GLTFLoader();
 		loader.load('content/check.mp4', function ( gltf ) {

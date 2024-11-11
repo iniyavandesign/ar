@@ -6,6 +6,8 @@
 		<script src='lib/three.min.js'></script>
 		<script src="lib/ar.js"></script>
 		<script src="lib/WebGL.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe@1.6.0/dist/aframe-master.min.js"></script>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js></script>
 		<script src="lib/GLTFLoader.js"></script>
 		<!-- script for popup message -->
 		<script src="lib/sweetalert2.all.min.js"></script>
@@ -19,12 +21,16 @@
 		//////////////////////////////////////////////////////////////////////////////////
 		//		Init
 		//////////////////////////////////////////////////////////////////////////////////
+    <a-scene>
+      <a-plane id="imageplane" position="0 0 0" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" src="content/table.jpg"></a-plane>
+    </a-scene>
 
 		//Error if not WebGL compatible
 		if ( WEBGL.isWebGLAvailable() === false ) {
 				document.body.appendChild( WEBGL.getWebGLErrorMessage() );
 		}
 
+    
 		// init renderer
 		var renderer	= new THREE.WebGLRenderer({
 			antialias	: true,
@@ -60,7 +66,7 @@
 		scene.add( light );
 
 		spotLight = new THREE.SpotLight( 0xffffff, 0.7 );
-		spotLight.position.set( -2, 3, 5 );
+		spotLight.position.set( 2, 3, 5 );
 		spotLight.angle = 0.5 * Math.PI / 4;
 		spotLight.penumbra = 1;
 		spotLight.decay = 2;

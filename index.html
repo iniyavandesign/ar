@@ -168,7 +168,8 @@
      // Create a video element
     var videoElement = document.createElement('video');
     videoElement.loop = true;
-    // videoElement.muted = true;
+    videoElement.autoplay = true;
+    videoElement.muted = true;
     videoElement.src = 'content/nithralife.mp4'; // Replace with your video source
     videoElement.play();
 
@@ -179,7 +180,7 @@
 
     // Create a material and mesh for the video
     var videoMaterial = new THREE.MeshBasicMaterial({ map: videoTexture });
-    var videoGeometry = new THREE.PlaneGeometry(4, 2); // Adjust dimensions as needed
+    var videoGeometry = new THREE.PlaneGeometry(5, 2); // Adjust dimensions as needed
     var videoMesh = new THREE.Mesh(videoGeometry, videoMaterial);
 
     // Position and rotate the video mesh

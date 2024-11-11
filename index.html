@@ -126,15 +126,19 @@
 		////////////////////////////////////////////////////////////////////////////////
 		//          Create a ArMarkerControls
 		////////////////////////////////////////////////////////////////////////////////
-		
-		var markerRoot = new THREE.Group
-		scene.add(markerRoot)
-		var artoolkitMarker = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
-			//type: 'barcode',
-			//barcodeValue: 'https://magicstickr.github.io/video-base/index.html',
-			type : 'pattern',
-			patternUrl : 'marker/marker_video.patt'
-		})
+// 		const patternUrls = [
+//   'marker/marker_video.patt',
+//   'marker/marker_yann.patt', // Add more URLs here
+//   // ...
+// ];
+// 		var markerRoot = new THREE.Group
+// 		scene.add(markerRoot)
+// 		var artoolkitMarker = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
+// 			//type: 'barcode',
+// 			//barcodeValue: 'https://magicstickr.github.io/video-base/index.html',
+// 			type : 'pattern',
+// 			patternUrl : patternUrls
+// 		})
 
 		// build a smoothedControls
 		var smoothedRoot = new THREE.Group()

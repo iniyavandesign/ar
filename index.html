@@ -113,8 +113,8 @@
 		var arToolkitContext = new THREEx.ArToolkitContext({
 			cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '../data/data/camera_para.dat',
 			detectionMode: 'mono',
-			maxDetectionRate: 60,
-			canvasWidth: 100*3,
+			maxDetectionRate: 30,
+			canvasWidth: 80*3,
 			canvasHeight: 60*3,
 		})
 		// initialize it
@@ -164,6 +164,20 @@
 		var mouse = new THREE.Vector2();
 
 		var all = new THREE.Group();
+
+		function requestAudioPermission() {
+  navigator.mediaDevices.getUserMedia({ audio: true })
+    .then(function(stream) {
+      // User granted permission, you can now use the stream
+      const audioContext = new AudioContext();
+      const audioSource = audioContext.createMediaStreamSource(stream);
+      // ... further audio processing, e.g., connecting to a node
+    })
+    .catch(function(err) {
+      console.error('Error getting audio: ', err);
+      // Handle permission denial or other errors
+    });
+}
 
      // Create a video element
     var videoElement = document.createElement('video');

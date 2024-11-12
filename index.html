@@ -168,10 +168,8 @@
      // Create a video element
     var videoElement = document.createElement('video');
 	videoElement.loop = true;
-//     setTimeout(() => {
-//     videoElement.muted = true;
-// }, 100); // Adjust the delay as needed
-	videoElement.muted=true;
+	videoElement.muted = true;
+	videoElement.controls = true;
     videoElement.src = 'content/nithra_jobs.mp4'; // Replace with your video source
     videoElement.play();
 

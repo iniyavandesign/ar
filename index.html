@@ -165,30 +165,38 @@
 
 		var all = new THREE.Group();
 
+
+		<a-scene embedded arjs>
+			<a-entity arjs='sourceType: imageMarker; sourceType: videoMarker; sourceUrl: marker/nithra.patt'>
+				<a-video src="content/nithra_jobs.mp4" width="2" height="1" position="0 0 0"></a-video>
+			</a-entity>
+		</a-scene>
+
+
+
 	     // Create a video element
-    var videoElement = document.createElement('video');
-	videoElement.loop = true;
-	//videoElement.muted = true;
-	videoElement.controls = true;
-    videoElement.src = 'content/nithra_jobs.mp4'; // Replace with your video source
-    videoElement.play();
+		var videoElement = document.createElement('video');
+		videoElement.loop = true;
+		videoElement.muted = true;
+		videoElement.src = 'content/nithra_jobs.mp4'; // Replace with your video source
+		videoElement.play();
 
-    // Create a video texture
-    var videoTexture = new THREE.VideoTexture(videoElement);
-    videoTexture.minFilter = THREE.LinearFilter; 
+		// Create a video texture
+		var videoTexture = new THREE.VideoTexture(videoElement);
+		videoTexture.minFilter = THREE.LinearFilter; 
 
 
-    // Create a material and mesh for the video
-    var videoMaterial = new THREE.MeshBasicMaterial({ map: videoTexture });
-    var videoGeometry = new THREE.PlaneGeometry(4, 2.5); // Adjust dimensions as needed
-    var videoMesh = new THREE.Mesh(videoGeometry, videoMaterial);
+		// Create a material and mesh for the video
+		var videoMaterial = new THREE.MeshBasicMaterial({ map: videoTexture });
+		var videoGeometry = new THREE.PlaneGeometry(4, 2.5); // Adjust dimensions as needed
+		var videoMesh = new THREE.Mesh(videoGeometry, videoMaterial);
 
-    // Position and rotate the video mesh
-    videoMesh.position.set(0, 0, -0.5); // Adjust position as needed
-    videoMesh.rotation.x = -Math.PI / 2;
+		// Position and rotate the video mesh
+		videoMesh.position.set(0, 0, -0.5); // Adjust position as needed
+		videoMesh.rotation.x = -Math.PI / 2;
 
-    // Add the video mesh to the scene
-    arWorldRoot.add(videoMesh);
+		// Add the video mesh to the scene
+		arWorldRoot.add(videoMesh);
 
 		//Load 3D object
 		var loader = new THREE.GLTFLoader();

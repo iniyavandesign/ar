@@ -165,7 +165,7 @@
 
 		var all = new THREE.Group();
 
-		function requestAudioPermission() {
+		//function requestAudioPermission() {
   navigator.mediaDevices.getUserMedia({ audio: true })
     .then(function(stream) {
       // User granted permission, you can now use the stream
@@ -182,7 +182,7 @@
      // Create a video element
     var videoElement = document.createElement('video');
 	videoElement.loop = true;
-	videoElement.muted = true;
+	//videoElement.muted = true;
 	videoElement.controls = true;
     videoElement.src = 'content/nithra_jobs.mp4'; // Replace with your video source
     videoElement.play();

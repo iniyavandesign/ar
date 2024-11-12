@@ -168,7 +168,14 @@
      // Create a video element
     var videoElement = document.createElement('video');
 	videoElement.loop = true;
-    videoElement.muted = false;
+//     setTimeout(() => {
+//     videoElement.muted = true;
+// }, 100); // Adjust the delay as needed
+const sound = new Howl({
+  src: [videoElement.src],
+  html5: true,
+  mute: true // Set initial mute state
+});
     videoElement.src = 'content/nithra_jobs.mp4'; // Replace with your video source
     videoElement.play();
 
